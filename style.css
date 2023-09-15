@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100');
+ html, body {
+ background-color:#000;
+   font-family: 'Montserrat', sans-serif;
+}
+ #app {
+   background: #0a0a0a;
+   height: 100vh;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(rgba(10, 10, 10, .6), rgba(0, 0, 0, .9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px), url('https://pbs.twimg.com/ext_tw_video_thumb/1423297871617544198/pu/img/T4QpbDN0rD1rPyOv.jpg:large');
+   background-size: cover;
+   background-position: center;
+   z-index: 1;
+}
+ #wrapper {
+   text-align: center;
+}
+ .sub {
+   color: red;
+   letter-spacing: 1em;
+   font-size: 30px;
+}
+/*  mixin coloca una copia de nuestro texto directamente en nuestro texto existente, al mismo tiempo que configura el contenido en el conjunto de texto apropiado en el atributo de texto de datos. */
+ .glitch {
+   position: relative;
+   color: white;
+   font-size: 3.5em;
+   letter-spacing: 0.5em;
+  /* ... */
+   animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+ .glitch::before {
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   left: 2px;
+   text-shadow: -2px 0 #ff004c;
+  /* Clip para la animación */
+   clip: rect(44px, 450px, 56px, 0);
+  /* Runs our glitch-anim defined below to run in a 5s loop, infinitely, with an alternating animation to keep things fresh. */
+   animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+ .glitch::after {
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   left: -2px;
+   text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+   animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+/* Animación por pasos con porcentajes.*/
+ @keyframes glitch-anim {
+   0% {
+     clip: rect(47px, 9999px, 13px, 0);
+     transform: skew(0.78deg);
+  }
+   5% {
+     clip: rect(48px, 9999px, 64px, 0);
+     transform: skew(0.05deg);
+  }
+   10% {
+     clip: rect(31px, 9999px, 93px, 0);
+     transform: skew(0.26deg);
+  }
+   15% {
+     clip: rect(25px, 9999px, 37px, 0);
+     transform: skew(0.48deg);
+  }
+   20% {
+     clip: rect(43px, 9999px, 35px, 0);
+     transform: skew(0.12deg);
+  }
+   25% {
+     clip: rect(34px, 9999px, 74px, 0);
+     transform: skew(0.66deg);
+  }
+   30% {
+     clip: rect(67px, 9999px, 27px, 0);
+     transform: skew(0.19deg);
+  }
+   35% {
+     clip: rect(30px, 9999px, 96px, 0);
+     transform: skew(0.46deg);
+  }
+   40% {
+     clip: rect(85px, 9999px, 37px, 0);
+     transform: skew(0.68deg);
+  }
+   45% {
+     clip: rect(24px, 9999px, 39px, 0);
+     transform: skew(0.77deg);
+  }
+   50% {
+     clip: rect(74px, 9999px, 29px, 0);
+     transform: skew(0.87deg);
+  }
+   55% {
+     clip: rect(94px, 9999px, 83px, 0);
+     transform: skew(0.57deg);
+  }
+   60% {
+     clip: rect(28px, 9999px, 46px, 0);
+     transform: skew(0.15deg);
+  }
+   65% {
+     clip: rect(100px, 9999px, 2px, 0);
+     transform: skew(0.38deg);
+  }
+   70% {
+     clip: rect(17px, 9999px, 99px, 0);
+     transform: skew(0.89deg);
+  }
+   75% {
+     clip: rect(13px, 9999px, 84px, 0);
+     transform: skew(0.83deg);
+  }
+   80% {
+     clip: rect(90px, 9999px, 32px, 0);
+     transform: skew(0.28deg);
+  }
+   85% {
+     clip: rect(72px, 9999px, 56px, 0);
+     transform: skew(0.44deg);
+  }
+   90% {
+     clip: rect(7px, 9999px, 26px, 0);
+     transform: skew(0.19deg);
+  }
+   95% {
+     clip: rect(69px, 9999px, 29px, 0);
+     transform: skew(0.45deg);
+  }
+   100% {
+     clip: rect(85px, 9999px, 10px, 0);
+     transform: skew(0.43deg);
+  }
+}
+ @keyframes glitch-anim2 {
+   0% {
+     clip: rect(1px, 9999px, 2px, 0);
+     transform: skew(0.42deg);
+  }
+   5% {
+     clip: rect(4px, 9999px, 14px, 0);
+     transform: skew(0.38deg);
+  }
+   10% {
+     clip: rect(74px, 9999px, 19px, 0);
+     transform: skew(0.16deg);
+  }
+   15% {
+     clip: rect(34px, 9999px, 44px, 0);
+     transform: skew(0.73deg);
+  }
+   20% {
+     clip: rect(46px, 9999px, 94px, 0);
+     transform: skew(0.24deg);
+  }
+   25% {
+     clip: rect(46px, 9999px, 3px, 0);
+     transform: skew(0.12deg);
+  }
+   30% {
+     clip: rect(94px, 9999px, 50px, 0);
+     transform: skew(0.77deg);
+  }
+   35% {
+     clip: rect(78px, 9999px, 36px, 0);
+     transform: skew(0.57deg);
+  }
+   40% {
+     clip: rect(95px, 9999px, 1px, 0);
+     transform: skew(0.48deg);
+  }
+   45% {
+     clip: rect(84px, 9999px, 75px, 0);
+     transform: skew(0.75deg);
+  }
+   50% {
+     clip: rect(62px, 9999px, 92px, 0);
+     transform: skew(0.78deg);
+  }
+   55% {
+     clip: rect(48px, 9999px, 45px, 0);
+     transform: skew(0.45deg);
+  }
+   60% {
+     clip: rect(60px, 9999px, 48px, 0);
+     transform: skew(0.91deg);
+  }
+   65% {
+     clip: rect(69px, 9999px, 36px, 0);
+     transform: skew(0.56deg);
+  }
+   70% {
+     clip: rect(50px, 9999px, 31px, 0);
+     transform: skew(0.94deg);
+  }
+   75% {
+     clip: rect(61px, 9999px, 4px, 0);
+     transform: skew(0.14deg);
+  }
+   80% {
+     clip: rect(15px, 9999px, 56px, 0);
+     transform: skew(0.56deg);
+  }
+   85% {
+     clip: rect(57px, 9999px, 85px, 0);
+     transform: skew(0.19deg);
+  }
+   90% {
+     clip: rect(30px, 9999px, 49px, 0);
+     transform: skew(0.67deg);
+  }
+   95% {
+     clip: rect(35px, 9999px, 13px, 0);
+     transform: skew(0.09deg);
+  }
+   100% {
+     clip: rect(86px, 9999px, 44px, 0);
+     transform: skew(0.4deg);
+  }
+}
+ @keyframes glitch-skew {
+   0% {
+     transform: skew(-2deg);
+  }
+   10% {
+     transform: skew(-1deg);
+  }
+   20% {
+     transform: skew(5deg);
+  }
+   30% {
+     transform: skew(5deg);
+  }
+   40% {
+     transform: skew(1deg);
+  }
+   50% {
+     transform: skew(-3deg);
+  }
+   60% {
+     transform: skew(0deg);
+  }
+   70% {
+     transform: skew(-4deg);
+  }
+   80% {
+     transform: skew(2deg);
+  }
+   90% {
+     transform: skew(3deg);
+  }
+   100% {
+     transform: skew(2deg);
+  }
+}
+ 
+/*Página de inicio*/
+
+/*Links*/
+
+a, a:link, a:hover, a:visited, a:active {
+  text-decoration: none; color: white;
+}
+
+
+/*Home y demas*/
+
+/* Estilos generales */
+body {
+ 
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #000000;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*Generos*/
+
+/* Estilos generales */
+
+.container-fluid {
+
+margin: 0px;
+padding: 30px;
+
+}
+
+
+.fakeimg {
+  height: 200px;
+
+}
+
+p {
+  color: #000000;
+  font-family: 'Montserrat';
+}
+
+footer {
+  background-color: #000;
+  padding: 10px;
+  text-align: center;
+}
+
+.img-fluid {
+  object-fit: cover;
+}
+
+/* Estilos para la sección de géneros */
+#generos {
+  padding: 20px;
+}
+
+.genero-lista {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.genero-lista li {
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.genero-lista img {
+  width: 60%;
+  height: 60%;
+  margin-bottom: 10px;
+}
+
+.genero-lista h3 {
+  color: #690000;
+  font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat';
+  padding: 10px;
+  background: #ffffff;
+  text-align: center;
+}
+
+/* Header/Blog Title */
+.header {
+
+  font-size: 40px;
+  text-align: center;
+  background: rgb(0, 0, 0);
+}
+
+/* columnas */
+/* izquierda */
+.leftcolumn {
+  float: left;
+  width: 70%;
+}
+
+/* derecha */
+.rightcolumn {
+  float: left;
+  width: 30%;
+  padding-left: 10px;
+}
+
+/* ... */
+
+/* efecto de card para los articulos */
+.card {
+  background-color: rgb(0, 0, 0);
+  padding: 20px;
+  margin-top: 10px;
+}
+
+
+
+/*... */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+div {
+
+  text-emphasis-color: black;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background: #000000;
+
+}
+
+/* Responsive layout  */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
